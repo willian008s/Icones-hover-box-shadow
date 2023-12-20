@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: black;
+    }
+
+    ul {
+      position: relative;
+      display: flex;
+      gap: 50px;
+    }
+
+    ul li {
+      position: relative;
+      list-style: none;
+      display: flex;
+      height: 80px;
+      width: 80px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    ul li a {
+      position: relative;
+      text-decoration: none;
+      z-index: 2; /* Ajuste a propriedade z-index para garantir que o texto esteja sobre o :after */
+    }
+
+    .a {
+      color: blue;
+    }
+
+    li:before {
+      content: "";
+      position: absolute;
+      inset: 30px;
+      transition: 0.5s ;
+      box-shadow: 0 0 0 10px red, 0 0 0 20px black, 0 0 0 22px red;    
+      /* Ajuste o raio do border-radius conforme necessário */
+    }
+    li:hover:before{
+      inset: 0  ;
+    }
+
+    li:after {
+      content: "";
+      position: absolute;
+      inset: 0;      
+      background: black;
+      transform: rotate(45deg);
+      z-index: 1; /* Ajuste a propriedade z-index para garantir que o :after esteja abaixo do texto */
+    }
+
+    li:hover a{
+      filter: drop-shadow(0 0 20px red),drop-shadow( 0  0  20px green);
+    }
+  </style>
+</head>
+<body>
+
+  <ul>
+    <li><a class="a" href=""><span class="material-symbols-outlined">shopping_cart_checkout</span></a></li>
+    <li><a href=""><span class="material-symbols-outlined">keyboard_command_key</span></a></li>
+    <li><a href=""><span class="material-symbols-outlined">transcribe</span></a></li>
+  </ul>
+
+</body>
+</html>
